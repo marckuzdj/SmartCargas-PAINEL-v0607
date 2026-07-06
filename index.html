@@ -482,7 +482,7 @@
     
     <!-- Subtítulo / Versão do Painel (Texto Cinza e Discreto abaixo da logo) -->
     <p class="brand-subtitle" style="margin: 0; padding: 0; font-size: 0.875rem; color: #6E6E73; font-weight: 500; letter-spacing: 0.3px;">
-        PAINEL ADMINISTRATIVO vSUPORT_0607.2
+        PAINEL ADMINISTRATIVO vSUPORT_0607.3
     </p>
 
 </div>
@@ -2844,18 +2844,82 @@ function compilarRelatorioMultiAbasExcel(dadosRomaneios, dadosDetalhado) {
 
 </div>
 
-<!-- Estrutura do Novo Modal de Suporte -->
-<div id="modalSuporte" class="modal-suporte" style="display: none;">
-    <div class="modal-suporte-content">
-        <h3>📍 Contato do Administrador</h3>
-        <p>Precisa de ajuda? Fale com o suporte técnico:</p>
-        <ul style="list-style: none; padding: 0;">
-            <li>💬 <strong>WhatsApp:</strong> (11) 99999-9999</li>
-            <li>📧 <strong>E-mail:</strong> admin@seu-sistema.com</li>
-        </ul>
-        <button onclick="fecharModalSuporte()" class="btn-fechar-modal">Fechar</button>
+
+
+<!-- Modal Suporte com Dados do Marcos Souza -->
+<!-- Modal Suporte Completo - Nu-Style com Dados Visíveis -->
+<div id="modalSuporte" class="modal-suporte" style="display: none;" onclick="fecharAoClicarFora(event)">
+    <div class="modal-suporte-content" onclick="event.stopPropagation()">
+        
+        <div class="nu-icon-badge">
+            <span>Nu</span>
+        </div>
+
+        <h3>Contatar Administradores</h3>
+        <p class="nu-subtitle">Escolha um dos nossos canais oficiais para suporte:</p>
+        
+        <div class="suporte-links-container">
+            
+            <!-- Administrador 1: Marcos Souza -->
+            <div class="admin-card">
+                <span class="admin-title">🛡️ Marcos Souza</span>
+                <div class="admin-info-text">
+                    <span>📱 (11) 97147-9377</span>
+                    <span>📧 marcos.asouza@telefonica.com</span>
+                </div>
+                <div class="admin-actions">
+                    <a href="https://wa.me." target="_blank" class="nu-btn nu-zap">
+                        💬 WhatsApp
+                    </a>
+                    <a href="mailto:marcos.asouza@://telefonica.com" class="nu-btn nu-mail">
+                        📧 E-mail
+                    </a>
+                </div>
+            </div>
+
+            <!-- Administrador 2: Pendente -->
+            <div class="admin-card">
+                <span class="admin-title">🛡️ Bruno Felipe</span>
+                <div class="admin-info-text">
+                    <span>📱 (41) 99135-1291</span>
+                    <span>📧 brunof.oliveira@telefonica.com</span>
+                </div>
+                <div class="admin-actions">
+                    <a href="https://wa.me." target="_blank" class="nu-btn nu-zap">
+                        💬 WhatsApp
+                    </a>
+                    <a href="mailto:admin2@://seu-sistema.com" class="nu-btn nu-mail">
+                        📧 E-mail
+                    </a>
+                </div>
+            </div>
+
+            <!-- Administrador 3: Pendente -->
+            <div class="admin-card">
+                <span class="admin-title">🛡️ Walter Reichmuth</span>
+                <div class="admin-info-text">
+                    <span>📱 (41) 98411-7987</span>
+                    <span>📧 walter.reichmuth@telefonica.com</span>
+                </div>
+                <div class="admin-actions">
+                    <a href="https://wa.me." target="_blank" class="nu-btn nu-zap">
+                        💬 WhatsApp
+                    </a>
+                    <a href="mailto:admin3@://seu-sistema.com" class="nu-btn nu-mail">
+                        📧 E-mail
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <button onclick="fecharModalSuporte()" class="btn-fechar-modal">Voltar para o Login</button>
     </div>
 </div>
+
+
+
+
 
 
 	

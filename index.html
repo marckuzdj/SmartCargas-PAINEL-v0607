@@ -422,6 +422,47 @@
     to { transform: rotate(360deg); }
 }
 
+/* Fundo escurecido atrás do modal */
+.modal-suporte {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Caixa branca com as informações */
+.modal-suporte-content {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: #333;
+}
+
+/* Estilo básico do botão de fechar */
+.btn-fechar-modal {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-fechar-modal:hover {
+  background-color: #0056b3;
+}
+		
     </style>
 </head>
 <body>
@@ -441,7 +482,7 @@
     
     <!-- Subtítulo / Versão do Painel (Texto Cinza e Discreto abaixo da logo) -->
     <p class="brand-subtitle" style="margin: 0; padding: 0; font-size: 0.875rem; color: #6E6E73; font-weight: 500; letter-spacing: 0.3px;">
-        PAINEL ADMINISTRATIVO v0607.1
+        PAINEL ADMINISTRATIVO vSUPORT_0607.2
     </p>
 
 </div>
@@ -472,11 +513,12 @@
             <span id="btnText">Acessar Painel</span>
         </button>
 
-        <div class="login-footer-links">
-            <a href="#" onclick="solicitarRecuperacaoSenha(event)" class="helper-link">Esqueci minha senha</a>
-            <div class="divider-dot"></div>
-            <a href="#" onclick="abrirTelaCadastro(event)" class="helper-link">Não tem conta? Cadastre-se</a>
-        </div>
+		<div class="login-footer-links">
+		    <!-- Link alterado para Suporte com a nova função onclick -->
+		    <a href="#" onclick="abrirModalSuporte(event)" class="helper-link">Suporte / Contato</a>
+		    <div class="divider-dot"></div>
+		    <a href="#" onclick="abrirTelaCadastro(event)" class="helper-link">Não tem conta? Cadastre-se</a>
+		</div>
         
     </form>
 
@@ -2353,6 +2395,15 @@ function compilarRelatorioMultiAbasExcel(dadosRomaneios, dadosDetalhado) {
   }
 }
 
+		function abrirModalSuporte(event) {
+		  event.preventDefault(); // Impede a página de recarregar ou rolar para o topo
+		  document.getElementById("modalSuporte").style.display = "flex";
+		}
+		
+		function fecharModalSuporte() {
+		  document.getElementById("modalSuporte").style.display = "none";
+		}
+
         
     </script>
 
@@ -2792,6 +2843,21 @@ function compilarRelatorioMultiAbasExcel(dadosRomaneios, dadosDetalhado) {
   </div>
 
 </div>
-    
+
+<!-- Estrutura do Novo Modal de Suporte -->
+<div id="modalSuporte" class="modal-suporte" style="display: none;">
+    <div class="modal-suporte-content">
+        <h3>📍 Contato do Administrador</h3>
+        <p>Precisa de ajuda? Fale com o suporte técnico:</p>
+        <ul style="list-style: none; padding: 0;">
+            <li>💬 <strong>WhatsApp:</strong> (11) 99999-9999</li>
+            <li>📧 <strong>E-mail:</strong> admin@seu-sistema.com</li>
+        </ul>
+        <button onclick="fecharModalSuporte()" class="btn-fechar-modal">Fechar</button>
+    </div>
+</div>
+
+
+	
 </body>
 </html>

@@ -567,6 +567,27 @@
   color: #6d09b3;
   text-decoration: underline;
 }
+
+/* Garante que a imagem preencha o círculo mantendo a proporção */
+.nu-badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ou use 'cover' se quiser que preencha as bordas */
+  border-radius: 50%;   /* Mantém a imagem redonda junto com o container */
+}
+
+/* Ajuste opcional no container caso queira tirar o fundo roxo */
+.nu-icon-badge {
+  width: 48px;
+  height: 48px;
+  background-color: #820ad1; /* Remova ou mude para 'transparent' se a imagem já tiver fundo */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden; /* Corta as sobras da imagem para fora do círculo */
+}
 		
     </style>
 </head>
@@ -587,7 +608,7 @@
     
     <!-- Subtítulo / Versão do Painel (Texto Cinza e Discreto abaixo da logo) -->
     <p class="brand-subtitle" style="margin: 0; padding: 0; font-size: 0.875rem; color: #6E6E73; font-weight: 500; letter-spacing: 0.3px;">
-        PAINEL ADMINISTRATIVO vSUPORT_0607.5
+        PAINEL ADMINISTRATIVO vSUPORT_0607.6
     </p>
 
 </div>
